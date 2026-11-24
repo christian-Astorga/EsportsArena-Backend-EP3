@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Esports Arena API – Documentación</title>
+  <!-- Swagger UI real (lo sirve springdoc); solo se le agrega el tema de Esports Arena -->
+  <link rel="stylesheet" href="/swagger-ui/swagger-ui.css" />
+  <link rel="stylesheet" href="/swagger-custom.css" />
+</head>
+<body>
+  <header class="esports-header">
+    <span class="logo">🎮 Esports Arena</span>
+    <span class="version">API REST v1 · Documentación Swagger</span>
+  </header>
+
+  <div id="swagger-ui"></div>
+
+  <script src="/swagger-ui/swagger-ui-bundle.js"></script>
+  <script>
+    window.onload = function () {
+      window.ui = SwaggerUIBundle({
+        url: "/v3/api-docs",
+        dom_id: "#swagger-ui",
+        deepLinking: true,
+        persistAuthorization: true,   // el token no se pierde al recargar la página
+        operationsSorter: "method",
+        presets: [SwaggerUIBundle.presets.apis],
+        layout: "BaseLayout"
+      });
+    };
+  </script>
+</body>
+</html>
